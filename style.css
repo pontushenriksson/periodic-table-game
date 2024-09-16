@@ -101,43 +101,43 @@ a:hover {
 
 /* Färgkategorier för olika elementtyper */
 .element[data-category='alkali-metal'] {
-  background-color: #ff6666;
+  background-color: #fc6763; /* Red */
 }
 
 .element[data-category='alkaline-earth-metal'] {
-  background-color: #ffdead;
+  background-color: #fedcac; /* Light Yellow */
 }
 
 .element[data-category='transition-metal'] {
-  background-color: #ffc0cb;
+  background-color: #f9c3c1; /* Light Pink */
 }
 
 .element[data-category='post-transition-metal'] {
-  background-color: #ffb6c1;
+  background-color: #a9cdcd; /* Silver */
 }
 
 .element[data-category='metalloid'] {
-  background-color: #ffebcd;
+  background-color: #cacd96; /* Tan */
 }
 
 .element[data-category='non-metal'] {
-  background-color: #98fb98;
+  background-color: #a3ff95; /* Yellow-Green */
 }
 
 .element[data-category='halogen'] {
-  background-color: #add8e6;
+  background-color: #fcff88; /* Sandy Brown */
 }
 
 .element[data-category='noble-gas'] {
-  background-color: #dda0dd;
+  background-color: #c3fdfe; /* Light Blue */
 }
 
 .element[data-category='lanthanide'] {
-  background-color: #e6e6fa;
+  background-color: #ffbdfe; /* Lavender */
 }
 
 .element[data-category='actinide'] {
-  background-color: #f5f5dc;
+  background-color: #ff98d0; /* Light Pink */
 }
 
 @media (max-width: 1200px) {
