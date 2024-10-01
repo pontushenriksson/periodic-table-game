@@ -1061,3 +1061,60 @@ function hidePopup() {
     popup = null;
   }
 }
+
+// Add this function to create emoji rain effect
+function createEmojiRain(emojis) {
+  const emojiContainer = document.createElement('div');
+  emojiContainer.classList.add('emoji-container');
+  document.body.appendChild(emojiContainer);
+
+  for (let i = 0; i < 500; i++) {
+    const emoji = document.createElement('div');
+    emoji.classList.add('emoji');
+    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = `${Math.random() * 100}%`;
+    emoji.style.animationDelay = `${Math.random() * 2}s`;
+    emojiContainer.appendChild(emoji);
+  }
+
+  setTimeout(() => {
+    document.body.removeChild(emojiContainer);
+  }, 10000);
+}
+
+// Modify the checkInput function
+function checkInput(event) {
+  const input = event.target.value.toLowerCase();
+  const elementDiv = document.querySelector(`.element[data-name="${input}"]`);
+
+  if (input === 'modo') {
+    createEmojiRain(['👍', '😊', '🎉', '👏']);
+    event.target.value = '';
+    return;
+  }
+
+  if (input === 'timrå' || input === 'timra') {
+    createEmojiRain(['😡', '😢', '👎', '💔']);
+    const message = document.createElement('div');
+    message.classList.add('message', 'flashing');
+    message.textContent = 'Modo är bättre!';
+    document.body.appendChild(message);
+
+    setTimeout(() => {
+      document.body.removeChild(message);
+    }, 10000);
+
+    event.target.value = '';
+    return;
+  }
+
+  if (elementDiv && !elementDiv.classList.contains('correct')) {
+    elementDiv.classList.add('correct');
+    elementDiv.textContent = elements.find(
+      (el) => el.name.toLowerCase() === input
+    ).symbol;
+    correctCount++;
+    updateProgress();
+    event.target.value = '';
+  }
+}
